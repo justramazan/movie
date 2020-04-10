@@ -1,0 +1,45 @@
+<div fxLayout="column" fxLayoutGap="5px">
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px">
+    <mat-form-field>
+      <mat-label>Search</mat-label>
+      <input matInput [(ngModel)]="searchingText" (input)="filter()">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Select genre</mat-label>
+      <mat-select [(ngModel)]="selectedGenre" (selectionChange)="filter()">
+        <mat-option [value]="genre" *ngFor="let genre of genres">
+          {{genre}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button (click)="clearFilter()" mat-icon-button aria-label="Clear">
+      <mat-icon>clear</mat-icon>
+    </button>
+  </div>
+  <div class="cardList" fxLayoutGap="33px">
+    <mat-card class="cardListItem" fxLayout="column" fxLayoutAlign="space-between" *ngFor="let item of movies;">
+   
+        <img class="card-image" src="assets/images/movie-covers/{{item.img}}">
+
+      <mat-card-content>
+        <p>
+          <mat-card-title> {{item.name}}</mat-card-title>
+        </p>
+        <div class="rate">
+          <mat-icon>star</mat-icon><span>{{item.rate}}</span>
+        </div>
+        <mat-divider></mat-divider>
+      </mat-card-content>
+      <mat-card-actions>
+        <mat-chip-list>
+          <mat-chip *ngFor="let genre of item.genres;" color="primary">{{genre}}</mat-chip>
+        </mat-chip-list>
+      </mat-card-actions>
+      <mat-card-footer>
+        <button class="detail-button"  mat-stroked-button routerLink="/movie/detail/{{item.id}}" color="primary">Details</button>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+</div>

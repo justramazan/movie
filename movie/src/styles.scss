@@ -1,0 +1,103 @@
+/* You can add global styles to this file, and also import other style files */
+@import "app/app.theme";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.logo-content{
+    position: absolute;
+    right: 100%;
+    top: 0;
+    width: 20000px;
+    height: 100%;
+    content: '';
+    background-color: #f8104d;
+    -webkit-transform: skewX(-30deg);
+    -o-transform: skewX(-30deg);
+    transform: skewX(-30deg);
+}
+
+
+  
+ 
+
+.card-image{
+    width: 182px !important;
+  
+  }
+  
+
+  .cardList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start center;
+  }
+  /* Column Gap */
+  .cardList > * {
+    box-sizing: border-box;
+  }
+  .cardList > * {
+    margin-right: 32px;
+  }
+  /* Item sizing */
+  .cardListItem {
+    flex: 0 1 calc(33.3% - 210px);
+    margin-top: 10px;
+  }
+  /* medium size viewport */
+  @media screen and (max-width: 959px) {
+    /* Column Gap */
+    .cardList > *:not(:last-child) {
+      margin-right: 32px;
+    }
+    /* Item sizing */
+    .cardListItem {
+      flex: 0 1 calc(50% - 210px);
+      margin-top: 20px;
+      width: 230px !important;
+    }
+  }
+  /* small size viewport */
+  @media screen and (max-width: 599px) {
+    .cardList {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .cardList > *:not(:last-child) {
+      margin-right: unset;
+      margin-bottom: 32px;
+    }
+
+    .cardListItem {
+      margin-top: 20px;
+      width: 230px !important;
+
+    }
+  }
+
+  .rate {
+    display: flex;
+    align-items: center;
+    font-size: 20px !important;
+    padding: 5px;
+ }
+
+.detail-button{
+  width: 100%!important;
+   min-width: unset!important;
+}
+
+  
+    .mat-card-title{
+      padding-top: 10px;
+      margin-bottom: 0;
+    }
+
+    .mat-card-footer , .mat-card-actions,.mat-card-header-text {
+        margin: 0 !important;
+    }
+
+   
